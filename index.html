@@ -1,504 +1,1016 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arul Jernas X | Product Specialist & IT Expert</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arul Jernas X | IT Administrator • Product Specialist • AI-Driven Support Professional</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
         :root {
             --primary: #00d2ff;
             --secondary: #3a7bd5;
-            --dark: #0f172a;
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent: #7c3aed;
+            --dark: #020617;
+            --dark-card: rgba(15, 23, 42, 0.7);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--dark);
-            color: #f8fafc;
+            background: var(--dark);
+            color: var(--text);
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         #particles-js {
             position: fixed;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             z-index: -1;
-            top: 0;
-            left: 0;
+        }
+
+        section {
+            padding: 110px 0;
+            position: relative;
         }
 
         .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            transition: all 0.3s ease;
+            background: var(--dark-card);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            transition: 0.4s ease;
+            overflow: hidden;
         }
 
         .glass-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px -10px rgba(0, 210, 255, 0.3);
+            transform: translateY(-6px);
+            border-color: rgba(0,210,255,0.35);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
         }
 
         .gradient-text {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            background: linear-gradient(90deg, #00d2ff, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
+        .navbar {
+            background: rgba(2, 6, 23, 0.7) !important;
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 18px;
+        }
+
+        .navbar-toggler {
+            border: none;
+            box-shadow: none !important;
+        }
+
+	.navbar.scrolled {
+    	    background: rgba(2, 6, 23, 0.95) !important;
+	}
+
         .nav-link {
-            color: #94a3b8 !important;
+            color: var(--muted) !important;
             transition: 0.3s;
             font-weight: 500;
         }
 
-        .nav-link.active, .nav-link:hover {
-            color: var(--primary) !important;
+        .nav-link:hover,
+        .nav-link.active {
+            color: #fff !important;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .hero-sub {
+            max-width: 820px;
+            margin: auto;
+            color: var(--muted);
+            line-height: 1.9;
+        }
+
+        .btn-premium {
+            padding: 14px 28px;
+            border-radius: 999px;
+            border: none;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            color: white;
+            font-weight: 700;
+            transition: 0.35s ease;
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(0, 210, 255, 0.35);
+            color: white;
+        }
+
+        .section-title {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 800;
         }
 
         .timeline-item {
-            border-left: 2px solid var(--glass-border);
-            padding-left: 30px;
             position: relative;
-            padding-bottom: 40px;
+            padding-left: 30px;
+            border-left: 1px solid rgba(255,255,255,0.12);
+            margin-bottom: 40px;
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -9px;
-            top: 0;
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             border-radius: 50%;
             background: var(--primary);
-            box-shadow: 0 0 10px var(--primary);
+            left: -7px;
+            top: 10px;
+            box-shadow: 0 0 18px var(--primary);
         }
 
-        .btn-premium {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border: none;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: 0.3s;
-            position: relative;
-            overflow: hidden;
+        .skill-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
+            color: #cbd5e1;
+            font-size: 0.92rem;
+            margin: 6px;
+            transition: 0.3s ease;
         }
 
-        .btn-premium:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(0, 210, 255, 0.5);
-            color: white;
+        .skill-pill:hover {
+            background: rgba(0,210,255,0.12);
+            border-color: rgba(0,210,255,0.35);
+            transform: translateY(-2px);
         }
 
-        .progress {
-            height: 8px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            overflow: visible;
-        }
-
-        .progress-bar {
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 10px;
+        .proficiency-card {
+            height: 100%;
+            padding: 28px;
             position: relative;
         }
 
-        .skill-badge {
-            background: rgba(0, 210, 255, 0.1);
-            color: var(--primary);
-            border: 1px solid rgba(0, 210, 255, 0.2);
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.85rem;
+        .expertise-level {
+            margin-top: 18px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .expertise-level span {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.12);
+        }
+
+        .expertise-level span.active {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            box-shadow: 0 0 10px rgba(0,210,255,0.5);
+        }
+
+        .ai-panel {
+            background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(0,210,255,0.1));
+            border: 1px solid rgba(124,58,237,0.25);
+        }
+
+        .connect-card {
+            padding: 24px;
+            border-radius: 22px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: 0.3s ease;
+            height: 100%;
+        }
+
+        .connect-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0,210,255,0.3);
+        }
+
+        .connect-card a {
+            color: white;
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .badge-custom {
+            background: rgba(0,210,255,0.12);
+            color: #7dd3fc;
+            border: 1px solid rgba(0,210,255,0.18);
+            padding: 8px 14px;
+            border-radius: 999px;
             display: inline-block;
-            margin: 4px;
+            margin: 6px;
+            font-size: 0.85rem;
         }
 
-        section {
-            padding: 100px 0;
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        @media (max-width: 991px) {
+            .navbar {
+                margin: 10px;
+            }
+
+            .navbar-collapse {
+                padding-top: 15px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
         }
 
         @media (max-width: 768px) {
-            section { padding: 60px 0; }
-            .hero-title { font-size: 2.5rem !important; }
+            section {
+                padding: 80px 0;
+            }
+
+            .timeline-item {
+                padding-left: 20px;
+            }
+
+            .glass-card,
+            .proficiency-card,
+            .connect-card {
+                border-radius: 18px;
+            }
+
+            .hero-sub {
+                font-size: 0.98rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .btn-premium,
+            .btn-outline-light {
+                width: 100%;
+            }
+
+            .hero-actions {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div id="particles-js"></div>
+<div id="particles-js"></div>
 
-    <nav class="navbar navbar-expand-lg fixed-top glass-card mx-md-4 mt-3 py-2">
-        <div class="container">
-            <a class="navbar-brand font-bold text-xl gradient-text" href="#">ARUL JERNAS</a>
-            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto text-center">
-                    <li class="nav-item"><a class="nav-link mx-2" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link mx-2" href="#contact">Contact</a></li>
-                </ul>
+<nav class="navbar navbar-expand-lg fixed-top mx-md-4 mt-3 py-3">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4 gradient-text" href="#home">ARUL JERNAS</a>
+
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-lg-center text-center gap-lg-2">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                <li class="nav-item"><a class="nav-link" href="#connect">Connect</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="min-vh-100 d-flex align-items-center">
+    <div class="container text-center">
+
+        <div data-aos="zoom-in">
+		<!--
+            <p class="text-uppercase text-info fw-semibold tracking-widest mb-3">
+                IT Support • Network Administration • AI-Assisted Workflows
+            </p>
+		-->
+
+            <h1 class="hero-title mb-4">
+                Arul <span class="gradient-text">Jernas X</span>
+            </h1>
+
+            <h2 class="fs-2 fw-semibold mb-4 text-secondary-emphasis">
+                <span id="typed"></span>
+            </h2>
+
+            <p class="hero-sub mb-5">
+                Technical support and infrastructure professional experienced in enterprise payroll systems, IT administration, network troubleshooting, system maintenance, workflow coordination, AI-assisted productivity, and operational support. Focused on delivering reliable technical solutions, process accuracy, infrastructure stability, and excellent user support across enterprise environments.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 hero-actions flex-wrap">
+                <a href="#connect" class="btn btn-premium">
+                    <i class="fas fa-paper-plane me-2"></i>Let's Connect
+                </a>
+
+                <!--
+			<button onclick="window.print()" class="btn btn-outline-light rounded-pill px-4 py-3">
+                    	<i class="fas fa-download me-2"></i>Download Resume
+                	</button>
+		-->
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <section id="home" class="min-vh-100 d-flex align-items-center">
-        <div class="container text-center mt-5">
-            <div data-aos="zoom-in" data-aos-duration="1000">
-                <h5 class="text-uppercase tracking-widest text-primary mb-3">Welcome to my world</h5>
-                <h1 class="display-1 fw-bold mb-4 hero-title">I'm <span class="gradient-text">Arul Jernas X</span></h1>
-                <h2 class="h3 mb-4 text-slate-400">
-                    <span id="typed"></span>
-                </h2>
-                <p class="lead max-w-2xl mx-auto mb-5 text-slate-400">
-                    Experienced Product Specialist and IT Administrator focused on optimizing enterprise payroll systems and institutional network infrastructures.
-                </p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="#contact" class="btn btn-premium">Work Together</a>
-                    <a href="#" onclick="window.print()" class="btn btn-outline-light px-4 rounded-pill">
-                        <i class="fas fa-download me-2"></i>Download Resume
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="about">
+    <div class="container">
 
-    <section id="about" class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                <div class="glass-card p-4 p-md-5">
-                    <h2 class="display-5 fw-bold mb-4">About <span class="gradient-text">Me</span></h2>
-                    <p class="text-slate-400 mb-4 leading-relaxed">
-                        I am a dedicated professional with a background in Information Technology and Management. My expertise spans from managing complex payroll operations at Neeyamo to overseeing large-scale IT infrastructures at Arul Anandar College. I specialize in troubleshooting, network security, and data accuracy.
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="glass-card p-4 p-lg-5">
+                    <h2 class="section-title mb-4">
+                        About <span class="gradient-text">Me</span>
+                    </h2>
+
+                    <p class="text-secondary mb-4" style="line-height:1.9;">
+                        I am an IT and enterprise operations professional with hands-on experience in payroll processing systems, infrastructure administration, network management, technical troubleshooting, user support, logistics coordination, and workflow optimization. My background combines strong technical capabilities with operational discipline, communication skills, and problem-solving expertise.
                     </p>
-                    <div class="row g-4">
+
+                    <p class="text-secondary mb-4" style="line-height:1.9;">
+                        I have supported enterprise environments involving Windows systems, Active Directory, firewall management, network setup, Google Workspace administration, remote support tools, payroll validation, compliance workflows, and AI-assisted productivity improvements.
+                    </p>
+
+                    <div class="row text-center g-4 mt-3">
                         <div class="col-6">
-                            <h4 class="h2 fw-bold text-primary mb-0"><span class="counter">3</span>+</h4>
-                            <p class="text-slate-500">Years Experience</p>
+                            <h3 class="fw-bold gradient-text display-6">3+</h3>
+                            <p class="text-secondary mb-0">Years of Experience</p>
                         </div>
+
                         <div class="col-6">
-                            <h4 class="h2 fw-bold text-primary mb-0"><span class="counter">50</span>+</h4>
-                            <p class="text-slate-500">Systems Managed</p>
+                            <h3 class="fw-bold gradient-text display-6">100+</h3>
+                            <p class="text-secondary mb-0">Systems & Users Supported</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+
+            <div class="col-lg-6" data-aos="fade-left">
                 <div class="row g-4">
+
                     <div class="col-sm-6">
-                        <div class="glass-card p-4 text-center">
-                            <i class="fas fa-server text-4xl mb-3 text-primary"></i>
-                            <h5>IT Admin</h5>
+                        <div class="glass-card text-center p-4 h-100">
+                            <i class="fas fa-network-wired fs-1 text-info mb-3"></i>
+                            <h5 class="fw-bold">Infrastructure Support</h5>
+                            <p class="text-secondary small mb-0">Network administration, firewall configuration, troubleshooting & connectivity management.</p>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
-                        <div class="glass-card p-4 text-center">
-                            <i class="fas fa-calculator text-4xl mb-3 text-primary"></i>
-                            <h5>Payroll Expert</h5>
+                        <div class="glass-card text-center p-4 h-100">
+                            <i class="fas fa-file-invoice-dollar fs-1 text-info mb-3"></i>
+                            <h5 class="fw-bold">Payroll Operations</h5>
+                            <p class="text-secondary small mb-0">Payroll validation, compliance handling, reporting & enterprise workflow coordination.</p>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
-                        <div class="glass-card p-4 text-center">
-                            <i class="fas fa-shield-alt text-4xl mb-3 text-primary"></i>
-                            <h5>Network Sec</h5>
+                        <div class="glass-card text-center p-4 h-100">
+                            <i class="fas fa-robot fs-1 text-info mb-3"></i>
+                            <h5 class="fw-bold">AI Productivity</h5>
+                            <p class="text-secondary small mb-0">Prompt engineering, AI-assisted troubleshooting & workflow optimization.</p>
                         </div>
                     </div>
+
                     <div class="col-sm-6">
-                        <div class="glass-card p-4 text-center">
-                            <i class="fas fa-database text-4xl mb-3 text-primary"></i>
-                            <h5>Data Validation</h5>
+                        <div class="glass-card text-center p-4 h-100">
+                            <i class="fas fa-users-cog fs-1 text-info mb-3"></i>
+                            <h5 class="fw-bold">User Support</h5>
+                            <p class="text-secondary small mb-0">Technical communication, remote support, issue resolution & service coordination.</p>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="experience" class="container">
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <div class="container">
+
         <div class="text-center mb-5" data-aos="fade-up">
-            <h2 class="display-5 fw-bold mb-3">Professional <span class="gradient-text">Journey</span></h2>
-            <div class="w-16 h-1 bg-primary mx-auto"></div>
+            <h2 class="section-title">
+                Professional <span class="gradient-text">Experience</span>
+            </h2>
+            <!--
+		<p class="text-secondary mt-3">Enterprise operations, IT infrastructure, payroll systems, logistics coordination, and technical support expertise.</p>
+	    -->
         </div>
 
-        <div class="max-w-4xl mx-auto mt-5">
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="glass-card p-4">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div>
-                            <h3 class="h4 fw-bold text-primary">Product Specialist</h3>
-                            <h5 class="text-white">Neeyamo Enterprise Solutions Pvt. Ltd</h5>
-                            <p class="text-slate-500 mb-0"><i class="fas fa-map-marker-alt me-2"></i>Madurai, India</p>
-                        </div>
-                        <span class="badge bg-primary rounded-pill px-3 py-2">07/2025 - Present</span>
+        <div class="timeline-item" data-aos="fade-up">
+            <div class="glass-card p-4 p-lg-5">
+                <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+                    <div>
+                        <h3 class="fw-bold text-info">Product Specialist</h3>
+                        <h5 class="fw-semibold">Neeyamo Enterprise Solutions Pvt. Ltd</h5>
+                        <p class="text-secondary mb-0">
+                            <i class="fas fa-location-dot me-2"></i>Madurai, India
+                        </p>
                     </div>
-                    <ul class="text-slate-400 space-y-2">
-                        <li><i class="fas fa-check-circle text-primary me-2"></i>Handled payroll software and complex Excel operations for global clients.</li>
-                        <li><i class="fas fa-check-circle text-primary me-2"></i>Processed client inputs to prepare accurate pay registers and payroll documents.</li>
-                        <li><i class="fas fa-check-circle text-primary me-2"></i>Validated post-payroll reports ensuring 100% compliance with company policies.</li>
-                    </ul>
-                    <div class="mt-3">
-                        <span class="skill-badge">Payroll Compliance</span>
-                        <span class="skill-badge">Excel Automation</span>
-                        <span class="skill-badge">Logic Analysis</span>
+
+                    <div>
+                        <span class="badge text-bg-secondary px-4 py-3 rounded-pill">
+                            Jul 2025 – Feb 2026
+                        </span>
                     </div>
                 </div>
-            </div>
 
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="glass-card p-4">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div>
-                            <h3 class="h4 fw-bold text-primary">Warehouse Storekeeper</h3>
-                            <h5 class="text-white">Par Zon Maintenance Pvt. Ltd</h5>
-                            <p class="text-slate-500 mb-0"><i class="fas fa-map-marker-alt me-2"></i>Singapore</p>
-                        </div>
-                        <span class="badge bg-slate-700 rounded-pill px-3 py-2">09/2024 - 04/2025</span>
-                    </div>
-                    <ul class="text-slate-400 space-y-2">
-                        <li><i class="fas fa-check-circle text-primary me-2"></i>Managed staff attendance, scheduling, and daily workforce operations.</li>
-                        <li><i class="fas fa-check-circle text-primary me-2"></i>Oversaw logistics coordination ensuring timely deliveries and smooth order processing.</li>
-                    </ul>
-                </div>
-            </div>
+                <ul class="text-secondary" style="line-height:1.9;">
+                    <li>Handled enterprise payroll software operations, payroll validation workflows, and large-scale Excel-based processing tasks.</li>
+                    <li>Analyzed payroll logic and resolved discrepancies in salary calculations, compliance records, and pay register outputs.</li>
+                    <li>Processed and validated client payroll data while ensuring policy compliance and reporting accuracy.</li>
+                    <li>Collaborated with operational teams to improve workflow efficiency, reporting consistency, and data reliability.</li>
+                    <li>Used analytical thinking, troubleshooting methodologies, and process validation to improve payroll accuracy.</li>
+                    <li>Strengthened communication and stakeholder support skills through direct enterprise coordination.</li>
+                </ul>
 
-            <div class="timeline-item" data-aos="fade-up">
-                <div class="glass-card p-4">
-                    <div class="d-flex justify-content-between align-items-start mb-3">
-                        <div>
-                            <h3 class="h4 fw-bold text-primary">Junior IT Admin</h3>
-                            <h5 class="text-white">Arul Anandar College</h5>
-                            <p class="text-slate-500 mb-0"><i class="fas fa-map-marker-alt me-2"></i>Madurai, India</p>
-                        </div>
-                        <span class="badge bg-slate-700 rounded-pill px-3 py-2">06/2023 - 09/2024</span>
-                    </div>
-                    <ul class="text-slate-400 space-y-2">
-                        <li><i class="fas fa-check-circle text-primary me-2"></i>Optimized network reliability using enterprise routers and switches.</li>
-                        <li><i class="fas fa-check-circle text-primary me-2"></i>Administered domain users within ERP portals and Google Workspace.</li>
-                        <li><i class="fas fa-check-circle text-primary me-2"></i>Managed firewall rules, IP allocation, and periodic configuration backups.</li>
-                    </ul>
-                    <div class="mt-3">
-                        <span class="skill-badge">Network Admin</span>
-                        <span class="skill-badge">Firewall</span>
-                        <span class="skill-badge">CCTV Backup</span>
-                    </div>
+                <div class="mt-4">
+                    <span class="badge-custom">Payroll Operations</span>
+                    <span class="badge-custom">Excel Processing</span>
+                    <span class="badge-custom">Data Validation</span>
+                    <span class="badge-custom">Compliance Workflows</span>
+                    <span class="badge-custom">Logic Analysis</span>
+                    <span class="badge-custom">Client Coordination</span>
+                    <span class="badge-custom">Troubleshooting</span>
+                    <span class="badge-custom">Process Optimization</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="skills" class="bg-black bg-opacity-30">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-5 fw-bold mb-3">Technical <span class="gradient-text">Proficiency</span></h2>
-            </div>
-            
-            <div class="row g-5 mt-4">
-                <div class="col-md-6" data-aos="fade-right">
-                    <h4 class="mb-4 text-white"><i class="fas fa-desktop me-2 text-primary"></i>Operating Systems</h4>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>Windows Server</span><span>90%</span></div>
-                        <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%"></div></div>
+        <div class="timeline-item" data-aos="fade-up">
+            <div class="glass-card p-4 p-lg-5">
+
+                <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+                    <div>
+                        <h3 class="fw-bold text-info">Warehouse Storekeeper</h3>
+                        <h5 class="fw-semibold">Par Zon Maintenance Pvt. Ltd</h5>
+                        <p class="text-secondary mb-0">
+                            <i class="fas fa-location-dot me-2"></i>Singapore
+                        </p>
                     </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>Ubuntu / Linux</span><span>75%</span></div>
-                        <div class="progress"><div class="progress-bar" role="progressbar" style="width: 75%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>Windows 7/10/11</span><span>95%</span></div>
-                        <div class="progress"><div class="progress-bar" role="progressbar" style="width: 95%"></div></div>
+
+                    <div>
+                        <span class="badge text-bg-secondary px-4 py-3 rounded-pill">
+                            Sep 2024 – Apr 2025
+                        </span>
                     </div>
                 </div>
-                
-                <div class="col-md-6" data-aos="fade-left">
-                    <h4 class="mb-4 text-white"><i class="fas fa-network-wired me-2 text-primary"></i>Network & Infrastructure</h4>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>TCP/IP & Networking</span><span>85%</span></div>
-                        <div class="progress"><div class="progress-bar" role="progressbar" style="width: 85%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>Firewall Management</span><span>80%</span></div>
-                        <div class="progress"><div class="progress-bar" role="progressbar" style="width: 80%"></div></div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between mb-2"><span>PC Troubleshooting & NAS</span><span>90%</span></div>
-                        <div class="progress"><div class="progress-bar" role="progressbar" style="width: 90%"></div></div>
-                    </div>
+
+                <ul class="text-secondary" style="line-height:1.9;">
+                    <li>Managed workforce attendance, scheduling, and daily warehouse operational coordination.</li>
+                    <li>Oversaw logistics communication and delivery coordination to maintain smooth operational flow.</li>
+                    <li>Maintained operational records, workforce planning activities, and inventory workflow support.</li>
+                    <li>Developed organizational, communication, multitasking, and operational monitoring capabilities.</li>
+                </ul>
+
+                <div class="mt-4">
+                    <span class="badge-custom">Logistics Coordination</span>
+                    <span class="badge-custom">Operations Management</span>
+                    <span class="badge-custom">Scheduling</span>
+                    <span class="badge-custom">Team Coordination</span>
+                    <span class="badge-custom">Inventory Workflow</span>
+                    <span class="badge-custom">Communication</span>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="education" class="container">
+        <div class="timeline-item" data-aos="fade-up">
+            <div class="glass-card p-4 p-lg-5">
+
+                <div class="d-flex flex-column flex-lg-row justify-content-between gap-3 mb-4">
+                    <div>
+                        <h3 class="fw-bold text-info">Junior IT Administrator</h3>
+                        <h5 class="fw-semibold">Arul Anandar College</h5>
+                        <p class="text-secondary mb-0">
+                            <i class="fas fa-location-dot me-2"></i>Madurai, India
+                        </p>
+                    </div>
+
+                    <div>
+                        <span class="badge text-bg-secondary px-4 py-3 rounded-pill">
+                            Jun 2023 – Sep 2024
+                        </span>
+                    </div>
+                </div>
+
+                <ul class="text-secondary" style="line-height:1.9;">
+                    <li>Troubleshot desktop systems, network connectivity issues, CCTV backups, and user support requests.</li>
+                    <li>Configured printers, desktops, LAN infrastructure, keystone jacks, and hardware installations.</li>
+                    <li>Managed routers, switches, firewall configurations, IP allocation, and network connectivity optimization.</li>
+                    <li>Administered Google Workspace domains, ERP user access, Active Directory workflows, and security policies.</li>
+                    <li>Performed server monitoring, OS patching, scheduled backups, and infrastructure health checks.</li>
+                    <li>Implemented new network connectivity setups for institutional lab infrastructure.</li>
+                    <li>Provided remote support and rapid troubleshooting using RDP, TeamViewer, and AnyDesk.</li>
+                </ul>
+
+                <div class="mt-4">
+                    <span class="badge-custom">Windows Administration</span>
+                    <span class="badge-custom">Active Directory</span>
+                    <span class="badge-custom">Google Workspace Admin</span>
+                    <span class="badge-custom">Firewall Configuration</span>
+                    <span class="badge-custom">Network Troubleshooting</span>
+                    <span class="badge-custom">TCP/IP</span>
+                    <span class="badge-custom">Server Monitoring</span>
+                    <span class="badge-custom">Patch Management</span>
+                    <span class="badge-custom">Hardware Support</span>
+                    <span class="badge-custom">Remote Desktop Support</span>
+                    <span class="badge-custom">LAN Setup</span>
+                    <span class="badge-custom">Backup Management</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="skills">
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">
+                Technical <span class="gradient-text">Proficiency</span>
+            </h2>
+            <p class="text-secondary mt-3">
+                Modern expertise visualization focused on enterprise technologies, IT operations, infrastructure support, and AI-enhanced productivity.
+            </p>
+        </div>
+
         <div class="row g-4">
-            <div class="col-md-6" data-aos="fade-up">
-                <h2 class="h3 fw-bold mb-4 gradient-text">Education</h2>
-                <div class="glass-card p-4 h-100">
-                    <h4 class="text-white h5 fw-bold">B.Sc | Information Technology and Management</h4>
-                    <p class="text-primary mb-1">Arul Anandar College, Madurai</p>
-                    <p class="text-slate-500">Graduated: 2023</p>
-                    <div class="mt-3">
-                        <span class="badge bg-success rounded-pill px-3">First Class with Distinction</span>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in">
+                <div class="glass-card proficiency-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h4 class="fw-bold mb-0">Infrastructure & Systems</h4>
+                        <i class="fas fa-server fs-3 text-info"></i>
+                    </div>
+
+                    <div>
+                        <span class="skill-pill">Windows 7/10/11</span>
+                        <span class="skill-pill">Windows Server</span>
+                        <span class="skill-pill">Ubuntu</span>
+                        <span class="skill-pill">macOS</span>
+                        <span class="skill-pill">OS Patching</span>
+                        <span class="skill-pill">System Monitoring</span>
+                    </div>
+
+                    <div class="expertise-level">
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span></span>
+                    </div>
+
+                    <small class="text-secondary mt-2 d-block">Advanced operational proficiency</small>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="glass-card proficiency-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h4 class="fw-bold mb-0">Networking & Security</h4>
+                        <i class="fas fa-network-wired fs-3 text-info"></i>
+                    </div>
+
+                    <div>
+                        <span class="skill-pill">TCP/IP</span>
+                        <span class="skill-pill">DNS</span>
+                        <span class="skill-pill">VPN</span>
+                        <span class="skill-pill">Firewall</span>
+                        <span class="skill-pill">Wi‑Fi</span>
+                        <span class="skill-pill">IP Allocation</span>
+                        <span class="skill-pill">Switches & Routers</span>
+                    </div>
+
+                    <div class="expertise-level">
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span></span>
+                    </div>
+
+                    <small class="text-secondary mt-2 d-block">Infrastructure & connectivity management</small>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                <div class="glass-card proficiency-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h4 class="fw-bold mb-0">Enterprise Support</h4>
+                        <i class="fas fa-headset fs-3 text-info"></i>
+                    </div>
+
+                    <div>
+                        <span class="skill-pill">Remote Desktop</span>
+                        <span class="skill-pill">TeamViewer</span>
+                        <span class="skill-pill">AnyDesk</span>
+                        <span class="skill-pill">User Support</span>
+                        <span class="skill-pill">Issue Resolution</span>
+                        <span class="skill-pill">System Troubleshooting</span>
+                    </div>
+
+                    <div class="expertise-level">
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                        <span class="active"></span>
+                    </div>
+
+                    <small class="text-secondary mt-2 d-block">Strong enterprise support capability</small>
+                </div>
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="glass-card proficiency-card h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="fw-bold mb-0">Payroll & Operational Expertise</h4>
+                        <i class="fas fa-chart-line fs-3 text-info"></i>
+                    </div>
+
+                    <div class="d-flex flex-wrap">
+                        <span class="skill-pill">Payroll Systems</span>
+                        <span class="skill-pill">Data Validation</span>
+                        <span class="skill-pill">Excel Operations</span>
+                        <span class="skill-pill">Compliance Verification</span>
+                        <span class="skill-pill">Workflow Coordination</span>
+                        <span class="skill-pill">Logic Analysis</span>
+                        <span class="skill-pill">Documentation</span>
+                        <span class="skill-pill">Process Accuracy</span>
+                        <span class="skill-pill">Client Communication</span>
+                        <span class="skill-pill">Operational Reporting</span>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <h2 class="h3 fw-bold mb-4 gradient-text">Certifications</h2>
-                <div class="glass-card p-4 h-100 d-flex align-items-center">
-                    <div class="d-flex align-items-center">
-                        <div class="bg-white p-3 rounded-lg me-4">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="40" alt="Google">
-                        </div>
-                        <div>
-                            <h4 class="text-white h5 fw-bold">IT Support Fundamentals</h4>
-                            <p class="text-slate-400 mb-0">Issued by Google</p>
-                        </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="glass-card proficiency-card ai-panel h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="fw-bold mb-0">AI & Productivity Stack</h4>
+                        <i class="fas fa-robot fs-3 text-info"></i>
+                    </div>
+
+                    <div class="d-flex flex-wrap">
+                        <span class="skill-pill">Prompt Engineering</span>
+                        <span class="skill-pill">AI-Assisted Troubleshooting</span>
+                        <span class="skill-pill">Generative AI Workflows</span>
+                        <span class="skill-pill">AI Productivity Tools</span>
+                        <span class="skill-pill">LLM Usage</span>
+                        <span class="skill-pill">AI Research Assistance</span>
+                        <span class="skill-pill">Technical Documentation</span>
+                        <span class="skill-pill">Smart Problem Solving</span>
+                        <span class="skill-pill">Digital Operations Efficiency</span>
+                    </div>
+
+                    <p class="text-secondary mt-4 mb-0">
+                        Experienced in leveraging AI-powered tools for productivity enhancement, faster issue diagnosis, documentation assistance, workflow acceleration, and operational support optimization.
+                    </p>
+                </div>
+            </div>
+
+<div class="col-lg-6" data-aos="fade-right">
+    <div class="glass-card proficiency-card h-100">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="fw-bold mb-0">Office & Productivity Tools</h4>
+            <i class="fas fa-laptop-file fs-3 text-info"></i>
+        </div>
+
+        <div class="d-flex flex-wrap">
+            <span class="skill-pill">MS Word</span>
+            <span class="skill-pill">MS Excel</span>
+            <span class="skill-pill">MS PowerPoint</span>
+            <span class="skill-pill">Google Docs</span>
+            <span class="skill-pill">Google Sheets</span>
+            <span class="skill-pill">Google Slides</span>
+            <span class="skill-pill">Google Forms</span>
+        </div>
+
+        <p class="text-secondary mt-4 mb-0">
+            Experienced in document preparation, spreadsheet management, presentation creation, form handling, reporting workflows, and collaborative productivity tools for enterprise operations.
+        </p>
+    </div>
+</div>
+
+<div class="col-lg-6" data-aos="fade-left">
+    <div class="glass-card proficiency-card h-100">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="fw-bold mb-0">Scripting & Automation</h4>
+            <i class="fas fa-code fs-3 text-info"></i>
+        </div>
+
+        <div class="d-flex flex-wrap">
+            <span class="skill-pill">Bash Scripting</span>
+            <span class="skill-pill">Excel Macross</span>
+            <span class="skill-pill">Google Apps Script</span>
+            <span class="skill-pill">Workflow Automation</span>
+            <span class="skill-pill">Task Optimization</span>
+            <span class="skill-pill">Process Automation</span>
+        </div>
+
+        <p class="text-secondary mt-4 mb-0">
+            Skilled in automating repetitive operational tasks, improving workflow efficiency, creating automation scripts, and streamlining productivity processes across enterprise environments.
+        </p>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+<section id="education">
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-6" data-aos="fade-up">
+                <div class="glass-card p-4 p-lg-5 h-100">
+                    <h2 class="fw-bold gradient-text mb-4">Education</h2>
+
+                    <h4 class="fw-bold">B.Sc – Information Technology & Management</h4>
+                    <p class="text-info mb-1">Arul Anandar College, Madurai</p>
+                    <p class="text-secondary">Graduated in 2023</p>
+
+                    <div class="mt-4">
+                        <span class="badge text-bg-success px-4 py-3 rounded-pill">
+                            First Class with Distinction
+                        </span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section id="contact" class="container">
-        <div class="glass-card p-5 overflow-hidden position-relative">
-            <div class="row">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <h2 class="display-5 fw-bold mb-4">Let's <span class="gradient-text">Connect</span></h2>
-                    <p class="text-slate-400 mb-5">Ready to bring my technical expertise to your team. Let's discuss how I can contribute to your project.</p>
-                    
-                    <div class="space-y-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
-                                <i class="fas fa-envelope text-primary"></i>
-                            </div>
-                            <div>
-                                <p class="text-slate-500 mb-0">Email Me</p>
-                                <a href="mailto:aruljernas002@gmail.com" class="text-white fw-bold">aruljernas002@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
-                                <i class="fas fa-phone text-primary"></i>
-                   </div>
-                            <div>
-                                <p class="text-slate-500 mb-0">Call Me</p>
-                                <a href="tel:+917339413233" class="text-white fw-bold">+91 73394 13233</a>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
-                            </div>
-                            <div>
-                                <p class="text-slate-500 mb-0">Location</p>
-                                <p class="text-white fw-bold mb-0">Tamilnadu, India - 630 411</p>
-                            </div>
-                        </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="glass-card p-4 p-lg-5 h-100">
+                    <h2 class="fw-bold gradient-text mb-4">Certifications</h2>
+
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-2">
+                            <i class="fab fa-google text-info me-2"></i>
+                            Google – IT Support Fundamentals
+                        </h5>
+                        <p class="text-secondary mb-0">
+                            Enterprise technical support, troubleshooting, infrastructure operations, and IT service fundamentals.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h5 class="fw-bold mb-2">
+                            <i class="fas fa-file-invoice-dollar text-info me-2"></i>
+                            Payroll Specialist Certification
+                        </h5>
+                        <p class="text-secondary mb-0">
+                            Payroll processing, compliance validation, operational workflow management, and payroll system handling.
+                        </p>
                     </div>
                 </div>
-                
-                <div class="col-lg-6" data-aos="fade-left">
-                    <form class="row g-3">
-                        <div class="col-md-6">
-                            <input type="text" class="form-control bg-transparent border-slate-700 text-white p-3" placeholder="Your Name">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" class="form-control bg-transparent border-slate-700 text-white p-3" placeholder="Your Email">
-                        </div>
-                        <div class="col-12">
-                            <input type="text" class="form-control bg-transparent border-slate-700 text-white p-3" placeholder="Subject">
-                        </div>
-                        <div class="col-12">
-                            <textarea class="form-control bg-transparent border-slate-700 text-white p-3" rows="4" placeholder="Your Message"></textarea>
-                        </div>
-                        <div class="col-12 mt-4">
-                            <button type="button" class="btn btn-premium w-100">Send Message</button>
-                        </div>
-                    </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="connect">
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">
+                <span class="gradient-text">Connect</span>
+            </h2>
+            <!--
+		<p class="text-secondary mt-3">
+                Open to enterprise IT support, infrastructure administration, payroll operations, technical support, and AI-assisted workflow opportunities.
+            </p>
+	    -->
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in">
+                <div class="connect-card text-center">
+                    <i class="fas fa-envelope fs-1 text-info mb-4"></i>
+                    <h5 class="fw-bold mb-3">Email</h5>
+                    <a href="mailto:aruljernasx@gmail.com">aruljernasx@gmail.com</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <footer class="py-5 text-center text-slate-500 border-t border-slate-800">
-        <div class="container">
-            <div class="mb-4">
-                <a href="#" class="text-white mx-3 h4"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-white mx-3 h4"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-white mx-3 h4"><i class="fab fa-twitter"></i></a>
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                <div class="connect-card text-center">
+                    <i class="fab fa-linkedin fs-1 text-info mb-4"></i>
+                    <h5 class="fw-bold mb-3">LinkedIn</h5>
+                    <a href="https://in.linkedin.com/in/arul-jernas-536074227">Arul Jernas</a>
+                </div>
             </div>
-            <p>&copy; 2026 Arul Jernas X. All rights reserved.</p>
-            <a href="#home" class="btn btn-sm btn-outline-secondary rounded-circle mt-3">
-                <i class="fas fa-chevron-up"></i>
-            </a>
+
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                <div class="connect-card text-center">
+                    <i class="fab fa-github fs-1 text-info mb-4"></i>
+                    <h5 class="fw-bold mb-3">GitHub</h5>
+                    <a href="https://github.com/Jernas02">github.com/Jernas02</a>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
+                <div class="connect-card text-center">
+                    <i class="fas fa-phone fs-1 text-info mb-4"></i>
+                    <h5 class="fw-bold mb-3">Phone</h5>
+                    <a href="tel:+917339413233">+91 73394 13233</a>
+                </div>
+            </div>
+
         </div>
-    </footer>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // AOS Animation
-        AOS.init({ duration: 1000, once: true });
+<footer class="py-5 text-center">
+    <div class="container">
 
-        // Typed.js Effect
-        new Typed('#typed', {
-            strings: ['Product Specialist', 'IT Administrator', 'Network Specialist', 'Logic Analyst'],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true
-        });
+        <div class="d-flex justify-content-center gap-4 fs-3 mb-4 flex-wrap">
+            <a href="https://in.linkedin.com/in/arul-jernas-536074227" class="text-white"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Jernas02" class="text-white"><i class="fab fa-github"></i></a>
+            <a href="mailto:aruljernasx@gmail.com" class="text-white"><i class="fas fa-envelope"></i></a>
+        </div>
 
-        // Particles Background
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#00d2ff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.2, "random": false },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#00d2ff", "opacity": 0.1, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+        <p class="text-secondary mb-0">
+            © 2026 - Arul Jernas X
+        </p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+    // AOS
+    AOS.init({
+        duration: 900,
+        once: true,
+        offset: 60
+    });
+
+    // Typed Animation
+    new Typed('#typed', {
+        strings: [
+            'Payroll Product Specialist',
+            'IT Administrator'
+        ],
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+        smartBackspace: true
+    });
+
+    // Particles
+    particlesJS('particles-js', {
+        particles: {
+            number: {
+                value: window.innerWidth < 768 ? 40 : 70,
+                density: {
+                    enable: true,
+                    value_area: 900
+                }
             },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.4 } } }
+            color: {
+                value: '#00d2ff'
             },
-            "retina_detect": true
-        });
+            shape: {
+                type: 'circle'
+            },
+            opacity: {
+                value: 0.18
+            },
+            size: {
+                value: 3,
+                random: true
+            },
+            line_linked: {
+                enable: true,
+                distance: 140,
+                color: '#00d2ff',
+                opacity: 0.1,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 1.8,
+                out_mode: 'out'
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: {
+                    enable: window.innerWidth > 768,
+                    mode: 'grab'
+                },
+                onclick: {
+                    enable: true,
+                    mode: 'push'
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 140,
+                    line_linked: {
+                        opacity: 0.25
+                    }
+                }
+            }
+        },
+        retina_detect: true
+    });
 
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.style.background = 'rgba(15, 23, 42, 0.9)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.03)';
+    // Responsive navbar background
+    const navbar = document.querySelector('.navbar');
+
+    	window.addEventListener('scroll', () => {
+   	navbar.classList.toggle('scrolled', window.scrollY > 50);
+	});
+
+    // Auto close mobile menu on click (Fixed)
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        const navCollapse = document.querySelector('.navbar-collapse');
+
+        if(navCollapse.classList.contains('show')){
+            const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+            if(bsCollapse){
+                bsCollapse.hide();
+            }
+        }
+    });
+});
+
+    // Active nav highlight
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+           if(window.scrollY >= sectionTop &&
+   window.scrollY < sectionTop + section.offsetHeight){
+                current = section.getAttribute('id');
             }
         });
-    </script>
+
+        navLinks.forEach(link => {
+    link.classList.remove('active');
+
+    if(link.getAttribute('href') === `#${current}`){
+        link.classList.add('active');
+    }
+});
+    });
+
+
+</script>
+
 </body>
 </html>
