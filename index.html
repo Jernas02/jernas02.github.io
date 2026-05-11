@@ -78,11 +78,23 @@
         }
 
         .navbar {
-            background: rgba(2, 6, 23, 0.7) !important;
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 18px;
-        }
+    background: rgba(2, 6, 23, 0.7) !important;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 18px;
+    transition: background 0.3s ease; /* Added for smoother transition */
+}
+
+/* Add this new rule to fix mobile background visibility */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: rgba(2, 10, 30, 0.98);
+        margin-top: 15px;
+        padding: 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
 
         .navbar-toggler {
             border: none;
@@ -257,12 +269,13 @@
 
         @media (max-width: 768px) {
             section {
-                padding: 80px 0;
+                padding: 60px 0;
             }
 
             .timeline-item {
-                padding-left: 20px;
-            }
+    padding-left: 15px;
+    margin-left: 10px; /* Aligns the line better on small screens */
+}
 
             .glass-card,
             .proficiency-card,
@@ -277,8 +290,13 @@
 
         @media (max-width: 576px) {
             .hero-title {
-                font-size: 2.8rem;
-            }
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+.hero-sub {
+    font-size: 0.9rem;
+    padding: 0 10px;
+}
 
             .btn-premium,
             .btn-outline-light {
@@ -993,7 +1011,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
         let current = '';
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 140;
+            const sectionTop = section.offsetTop - 180; // Increased offset for better trigger accuracy
            if(window.scrollY >= sectionTop &&
    window.scrollY < sectionTop + section.offsetHeight){
                 current = section.getAttribute('id');
