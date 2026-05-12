@@ -57,7 +57,7 @@
         }
 
         section {
-            padding: 60px 0;
+            padding: 30px 0;
             position: relative;
         }
 
@@ -284,13 +284,13 @@
 
         @media (max-width: 768px) {
             section {
-                padding: 60px 0;
+                padding: 30px 0;
             }
 
             .timeline-item {
-    padding-left: 15px;
-    margin-left: 10px; /* Aligns the line better on small screens */
-}
+    		padding-left: 15px;
+    		margin-left: 10px; /* Aligns the line better on small screens */
+			}
 
             .glass-card,
             .proficiency-card,
@@ -797,48 +797,52 @@
 
 <section id="education">
     <div class="container">
-
-        <div class="row g-4">
-
-            <div class="col-lg-6" data-aos="fade-up">
-                <div class="glass-card p-4 p-lg-5 h-100">
-                    <h2 class="fw-bold gradient-text mb-4">Education</h2>
-
-                    <h4 class="fw-bold">B.Sc – Information Technology & Management</h4>
-                    <p class="text-info mb-1">Arul Anandar College, Madurai</p>
-                    <p class="text-secondary">Graduated in 2023</p>
-
-                    <div class="mt-4">
-                        <span class="badge text-bg-success px-4 py-3 rounded-pill">
-                            First Class with Distinction
-                        </span>
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Academic <span class="gradient-text">Background</span></h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="glass-card p-4 p-lg-5">
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <div>
+                            <h3 class="fw-bold text-info">B.Sc – Information Technology & Management</h3>
+                            <h5 class="fw-semibold">Arul Anandar College</h5>
+                            <p class="text-secondary mb-0"><i class="fas fa-location-dot me-2"></i>Madurai, India</p>
+                        </div>
+                        <div class="text-end">
+                            <span class="badge text-bg-secondary px-4 py-2 rounded-pill">2020 – 2023</span>
+                        </div>
                     </div>
+                    <p class="text-secondary mb-4">Focused on enterprise systems, database management, and IT infrastructure operations.</p>
+                    <span class="badge text-bg-success px-4 py-3 rounded-pill">First Class with Distinction</span>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
 
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="glass-card p-4 p-lg-5 h-100">
-                    <h2 class="fw-bold gradient-text mb-4">Certifications</h2>
-
-                    <div class="mb-4">
-                        <h5 class="fw-bold mb-2">
-                            <i class="fab fa-google text-info me-2"></i>
-                            Google – IT Support Fundamentals
-                        </h5>
-                        <p class="text-secondary mb-0">
-                            Enterprise technical support, troubleshooting, infrastructure operations, and IT service fundamentals.
-                        </p>
+<section id="certifications">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="section-title">Professional <span class="gradient-text">Certifications</span></h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fab fa-google fs-1 text-info me-3"></i>
+                        <h4 class="fw-bold mb-0">IT Support Fundamentals</h4>
                     </div>
-
-                    <div>
-                        <h5 class="fw-bold mb-2">
-                            <i class="fas fa-file-invoice-dollar text-info me-2"></i>
-                            Payroll Specialist Certification
-                        </h5>
-                        <p class="text-secondary mb-0">
-                            Payroll processing, compliance validation, operational workflow management, and payroll system handling.
-                        </p>
+                    <p class="text-secondary">Certified by Google for enterprise technical support, troubleshooting, and infrastructure operations.</p>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="glass-card p-4 h-100">
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-file-invoice-dollar fs-1 text-info me-3"></i>
+                        <h4 class="fw-bold mb-0">Payroll Specialist</h4>
                     </div>
+                    <p class="text-secondary">Specialized certification in payroll processing, compliance validation, and enterprise workflow management.</p>
                 </div>
             </div>
         </div>
